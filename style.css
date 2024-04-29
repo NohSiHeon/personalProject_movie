@@ -1,0 +1,53 @@
+
+
+#header {
+    background-color: #ffe194;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 0;
+}
+
+#search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 0;
+}
+
+#search label {
+    font-size: 20px;
+}
+
+#searchInput {
+    width: 250px;
+}
+
+#main {
+    background-color: black;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.card {
+    display: inline-block;
+    width: 200px;
+    
+    margin: 30px 0 50px 70px;
+
+    
+}
+
+.card-body {
+    height: 400px;
+}
+.list-group {
+    width: 100%;
+    height: 50px;
+}
+
+img {
+    cursor: pointer;
+}
