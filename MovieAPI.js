@@ -94,7 +94,7 @@ function search() {
 
     movieData.forEach((i) => {
         // movieData에 있는 타이틀과 input에 넣은 값을 비교 후 있으면 보이게, 없으면 안보이게 설정
-        if (i['title'].search(inputValue) >= 0) {
+        if (i['title'].toLowerCase().search(inputValue.toLowerCase()) >= 0) {
             document.getElementById(`img${number}`).parentElement.style.display = "block"
         } else {
             document.getElementById(`img${number}`).parentElement.style.display = "none"
