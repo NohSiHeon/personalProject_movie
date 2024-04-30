@@ -6,7 +6,7 @@ const options = {
     }
 };
 
-let moviedata = [];
+let movieData = [];
 
 // api
 const api = async function () {
@@ -17,7 +17,7 @@ const api = async function () {
     const map1 = [];
 
     for (let i = 0; i < rsp['results'].length; i++) {
-        let temp = {};
+        const temp = {};
 
         temp['title'] = rsp['results'][i]['title'];
         temp['overview'] = rsp['results'][i]['overview'];
@@ -26,7 +26,7 @@ const api = async function () {
         temp['poster_path'] = rsp['results'][i]['poster_path'];
         map1.push(temp);
     }
-    moviedata = map1.map((x) => x);
+    movieData = map1.map((x) => x);
 }
 // img id값 구분하게 하는 변수
 let cardCount = 0;
@@ -35,7 +35,7 @@ let cardCount = 0;
 const awake = async function () {
     await api();
     let imgNum = document.getElementById(`img${cardCount}`);
-    moviedata.forEach((i) => {
+    movieData.forEach((i) => {
 
 
         let title = i['title'];
@@ -75,7 +75,7 @@ const awake = async function () {
         // 포스터 클릭에 대한 이벤트 추가
         imgNum = document.getElementById(`img${i}`);
         imgNum.addEventListener("click", () => {
-            alert(`영화 ID: ${moviedata[i]['id']}`);
+            alert(`영화 ID: ${movieData[i]['id']}`);
         });
     }
     // 검색 버튼에 대한 이벤트 추가
@@ -92,8 +92,8 @@ function search() {
 
     let number = 0;
 
-    moviedata.forEach((i) => {
-        // moviedata에 있는 타이틀과 input에 넣은 값을 비교 후 있으면 보이게, 없으면 안보이게 설정
+    movieData.forEach((i) => {
+        // movieData에 있는 타이틀과 input에 넣은 값을 비교 후 있으면 보이게, 없으면 안보이게 설정
         if (i['title'].search(inputValue) >= 0) {
             document.getElementById(`img${number}`).parentElement.style.display = "block"
         } else {
@@ -101,4 +101,6 @@ function search() {
         }
         number++;
     });
+console.log('asdasdasd')
+// github desktop
 }
